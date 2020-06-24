@@ -3,11 +3,11 @@ pipeline {
 		node { label 'standard_ubuntu18' }
 	}
     options {
-		timestamps()
+		//timestamps()
 		disableConcurrentBuilds()
 		buildDiscarder(logRotator(numToKeepStr: '10'))
 		timeout(time: 180, unit: 'MINUTES')
-		ansiColor('xterm')
+		//ansiColor('xterm')
 	}
 	parameters {
 		string(name: 'ZAP_TARGET_URL', defaultValue:'https:planningtasks.com', description:'')
