@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		node { label 'standard_ubuntu18' }
+		any
 	}
     options {
 		//timestamps()
