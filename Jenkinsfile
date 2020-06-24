@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		any
+		node { label 'master' }
 	}
     options {
 		//timestamps()
