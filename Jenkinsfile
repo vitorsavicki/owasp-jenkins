@@ -19,7 +19,7 @@ pipeline {
 				script {
 					currentBuild.displayName = "ZAP scan='${env.BUILD_NUMBER}''"
 					currentWorkspace=pwd()
-					cleanWs()					
+					deleteDir()					
 				}
 			}
 		}
@@ -47,6 +47,7 @@ pipeline {
 	}
 	 post {
         always {
+			sh "chmod +x -R ${env.WORKSPACE}"
             sh("${env.WORKSPACE}/runCleanup.sh")
         }	
 	}
